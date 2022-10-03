@@ -1,0 +1,34 @@
+<app-navbar
+  [isSettingsMode]="false"
+  [selectedPromotion]="this.selectedPromotion"
+  (onDisplaySideNav)="this.handleSideNavOpen()"
+></app-navbar>
+<mat-sidenav-container
+  class="sidenav-container"
+  (backdropClick)="this.handleSideNavOpen()"
+>
+  <mat-sidenav
+    class="sidenav"
+    mode="over"
+    (keydown.esc)="this.handleSideNavOpen()"
+    [opened]="this.isSideNavOpened"
+  >
+    <app-sidenav [promotions]="this.promotions"></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">person_search</mat-icon>
+        </ng-template>
+        <app-promo-card></app-promo-card>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">analytics</mat-icon>
+        </ng-template>
+        <app-statistics></app-statistics>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-sidenav-content>
+</mat-sidenav-container>

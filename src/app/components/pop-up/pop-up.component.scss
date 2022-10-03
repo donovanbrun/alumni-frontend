@@ -1,0 +1,41 @@
+.body-pop-up{
+  width: 600px;
+  height: 420px;
+  color: #666666;
+}
+
+.conteneur{
+  display: flex;
+}
+
+.flex{
+  flex-grow: 1;
+}
+
+.flex-gender{
+  flex-grow: 1;
+  text-align: right;
+}
+
+.icon-gender{
+  width: 17px;
+}
+
+.photo{
+  width: 20%;
+  margin-left: 40%;
+  border-radius: 50%;
+}
+
+.promo{
+  text-align: center;
+  font-size: 2em;
+}
+
+.icon-linkedin{
+  width: 200px;
+}
+
+a{
+  border: none;
+}

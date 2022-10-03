@@ -1,0 +1,49 @@
+<div *ngIf="!selectedPromotion; else promotionSettingsBlock" class="settings-title-container">
+  <h1 class="settings-title">Veuillez selectionner une promotion</h1>
+</div>
+<ng-template #promotionSettingsBlock>
+  <div class="settings-title-container">
+    <h1 class="settings-title">Promotion {{  this.selectedPromotion }}</h1>
+  </div>
+  <div id="settings-button-container">
+    <button mat-raised-button class="settings-button" color="primary" (click)="handleExportPromotion()">Exporter promotion</button>
+    <button mat-raised-button class="settings-button" color="warn" (click)="handleDeletePromotion()">Supprimer promotion</button>
+    <button mat-raised-button class="settings-button" color="primary" disabled>Ajouter étudiant</button>
+  </div>
+
+    <div id="settings-table-container" class="mat-elevation-z8" tabindex="0">
+      <table id="settings-table" mat-table [dataSource]="this.students" class="mat-elevation-z8">
+        <!-- FirstName Column -->
+        <ng-container matColumnDef="first_name">
+          <th mat-header-cell *matHeaderCellDef> Prénom </th>
+          <td mat-cell *matCellDef="let element"> {{element['student']['first_name']}} </td>
+        </ng-container>
+
+        <!-- LastName Column -->
+        <ng-container matColumnDef="last_name">
+          <th mat-header-cell *matHeaderCellDef> Nom </th>
+          <td mat-cell *matCellDef="let element"> {{element['student']['last_name']}} </td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element['student']['email']}} </td>
+        </ng-container>
+
+        <!-- Delete Column -->
+        <ng-container matColumnDef="delete" stickyEnd>
+          <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;Actions </th>
+          <td mat-cell *matCellDef="let element">
+            <button class="settings-card-button" mat-icon-button aria-label="Button with a delete icon" (click)="this.handleDeleteStudent(element['student']['id'])">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+</ng-template>
+

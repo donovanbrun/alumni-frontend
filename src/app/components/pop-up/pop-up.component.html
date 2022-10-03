@@ -1,0 +1,37 @@
+<div class="body-pop-up">
+
+  <div class="conteneur">
+    <mat-icon class="flex icon-modify" style="color: black">settings</mat-icon>
+    <div class="flex-gender">
+      <img src="../assets/img/men.png" alt="gender" class="icon-gender">
+    </div>
+  </div>
+
+  <img src="../assets/img/profil.png" alt="photo student" class="photo">
+  <div class="promo">{{ student.student.promotion }}</div>
+  <div style="text-align: center">{{ student.student.last_name }} {{ student.student.first_name }}</div>
+
+  <div class="conteneur" style="margin-top: 15px;">
+    <div class="flex">Entreprise actuelle : </div>
+    <div class="flex" style="text-align: right">{{ student.actual_company.name }}</div>
+  </div>
+
+  <div class="conteneur" style="margin-top: 15px;">
+    <div class="flex">Ville entreprise actuelle : </div>
+    <div class="flex" style="text-align: right">{{ student.actual_company.city }}</div>
+  </div>
+
+  <div class="conteneur" style="margin-top: 15px;">
+    <div class="flex">Entreprise d’accueil :  </div>
+    <div class="flex" style="text-align: right">{{ student.host_company.name }}</div>
+  </div>
+
+  <div class="conteneur" style="margin-top: 15px;">
+    <div class="flex">Ville entreprise d’accueil : </div>
+    <div class="flex" style="text-align: right">{{ student.host_company.city }}</div>
+  </div>
+
+  <div style="text-align: center;"><a href="https://www.linkedin.com/in/aymeric-lecolazet-95ab68201/" style="width: 90px;"><img src="../assets/img/linkedin.png" alt="gender" class="icon-gender" style="width: 90px;"></a></div>
+
+</div>
+

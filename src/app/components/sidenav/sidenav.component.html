@@ -1,0 +1,17 @@
+<div class="sidenav">
+  <mat-list>
+    <mat-list-item *ngIf="isSettingsMode; else elseBlock">
+      <button mat-flat-button class="sidenav-button" (click)="this.handleOnAddPromotion()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-list-item>
+    <ng-template #elseBlock>
+      <mat-list-item>
+        <button mat-flat-button class="sidenav-button" (click)="this.handleOnChangePromotion('all')">Général</button>
+      </mat-list-item>
+    </ng-template>
+    <mat-list-item *ngFor="let promotion of promotions" >
+      <button mat-flat-button class="sidenav-button" (click)="this.handleOnChangePromotion('' + promotion)">{{promotion}}</button>
+    </mat-list-item>
+  </mat-list>
+</div>

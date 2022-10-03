@@ -1,0 +1,36 @@
+<div id="login-page-container">
+  <h1 id="login-title">Alumni FIL</h1>
+  <form id="login-form" (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+
+    <!-- Username field -->
+    <mat-form-field class="login-field" appearance="outline">
+      <mat-icon [ngClass]="(username.errors?.['required'] || username.errors?.['minlength']) && username.touched ? 'material_icons_red' : 'material_icons_grey'" matSuffix>account_circle</mat-icon>
+      <mat-label>Nom d'utilisateur</mat-label>
+      <input matInput type="text" [(ngModel)]="loginFormModel.username" name="username" #username="ngModel" required>
+      <mat-hint *ngIf="(username.errors?.['required'] && username.touched)" align="end">Il faut renseigner le nom d'utilisateur</mat-hint>
+    </mat-form-field>
+
+    <!-- Password field -->
+    <mat-form-field class="login-field" appearance="outline">
+      <mat-icon [ngClass]="(password.errors?.['required'] || password.errors?.['minlength']) && password.touched ? 'material_icons_red' : 'material_icons_grey'" matSuffix>lock</mat-icon>
+      <mat-label>Mot de passe</mat-label>
+      <input matInput type="password" [(ngModel)]="loginFormModel.password" name="password" #password="ngModel" required minlength="8" maxlength="24">
+      <mat-hint *ngIf="(password.errors?.['required'] && password.touched)" align="end">Il faut renseigner le mot de passe</mat-hint>
+      <mat-hint *ngIf="(password.errors?.['minlength'] && password.touched)" align="end">Le mot de passe doit contenir entre 8 et 24 caractères</mat-hint>
+    </mat-form-field>
+
+    <!-- Submit button -->
+    <button mat-raised-button color="primary" id="login-form-button" type="submit" [disabled]="isLoading || !loginForm.form.valid">
+      <ng-template *ngIf="isLoading; then thenBlock else elseBlock"></ng-template>
+      <ng-template #thenBlock>
+        <mat-icon>
+          <mat-spinner color="primary" diameter="20"></mat-spinner>
+        </mat-icon>
+      </ng-template>
+      <ng-template #elseBlock>
+        Connexion
+      </ng-template>
+    </button>
+
+  </form>
+</div>

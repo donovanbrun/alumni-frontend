@@ -1,0 +1,45 @@
+.card{
+  border: solid #D6D6D6 0.5px;
+  border-radius: 5%;
+  width: 97%;
+  height: 98%;
+  box-shadow: 0 0 10px #a9a9a9;
+  margin-top: 3%;
+  margin-left: 3%;
+}
+
+.text{
+  text-align: center;
+  margin: 10px 0px 10px 0px;
+  color: #666666;
+}
+
+.photo{
+  width: 60%;
+  margin-left: 20%;
+  border-radius: 50%;
+}
+
+.conteneur{
+  display: flex;
+}
+
+.flex{
+  flex-grow: 1;
+}
+
+.flex-gender{
+  flex-grow: 1;
+  text-align: right;
+  margin-top: 7%;
+  margin-right: 7%
+}
+
+.icon-modify{
+  margin-top: 3%;
+  margin-left: 3%;
+}
+
+.icon-gender{
+  width: 17px;
+}

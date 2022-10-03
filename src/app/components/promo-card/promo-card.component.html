@@ -1,0 +1,5 @@
+<div style="text-align: center"><input matInput (keyup)="submit($event)" class="search" placeholder="Ex. Alexis Dupont" #input/></div>
+<mat-grid-list cols="8" rowHeight="15.5em" class="grille">
+  <mat-grid-tile *ngFor="let student of students"><app-user-card  [student]="student" class="user-card"></app-user-card></mat-grid-tile>
+</mat-grid-list>
+

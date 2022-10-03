@@ -1,0 +1,23 @@
+<mat-toolbar class="navbar-container" color="accent">
+  <div class="navbar-element-left">
+    <button mat-icon-button aria-label="Button to display sidebar" (click)="this.handleDisplaySideNav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div class="navbar-element-center">
+    <span>{{this.selectedPromotion === "all" ? "Général" : this.selectedPromotion}}</span>
+  </div>
+  <div class="navbar-element-right">
+    <button *ngIf="!this.isSettingsMode; else settingsButton" mat-icon-button aria-label="Button to display settings" (click)="this.handleSettings()">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <ng-template #settingsButton>
+      <button mat-icon-button aria-label="Button to display settings" (click)="this.handleHome()">
+        <mat-icon>home</mat-icon>
+      </button>
+    </ng-template>
+    <button mat-raised-button id="logout-button" color="primary" aria-label="Button to logout" (click)="this.handleLogout()">
+      Déconnexion
+    </button>
+  </div>
+</mat-toolbar>

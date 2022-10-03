@@ -1,0 +1,68 @@
+.grid-statistic {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+}
+
+.statistic{
+  height: 80%;
+}
+
+// .map {
+//   grid-column: 2 / span 1;
+//   grid-row: 1;
+// }
+
+.situation {
+  grid-column: 1 / span 1;
+  grid-row: 2;
+}
+
+.table {
+  grid-column: 2 / span 1;
+  grid-row: 1;
+}
+
+.gender {
+  grid-column: 3 / span 1;
+  grid-row: 2;
+}
+
+.grid-statistic-general {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 90%;
+}
+
+// .map-general {
+//   grid-column: 1 / span 1;
+//   grid-row: 1;
+// }
+
+.table-general {
+  grid-column: 2 / span 2;
+  grid-row: 1;
+  width: 80%;
+  align-self: center;
+  justify-self: center;
+}
+
+.situation-general {
+  padding-top: 10px;
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  width: 85%;
+  align-self: end;
+  justify-self: center;
+}
+
+.gender-general {
+  padding-top: 10px;
+  grid-column: 3 / span 2;
+  grid-row: 2;
+  width: 85%;
+  align-self: end;
+  justify-self: center;
+}

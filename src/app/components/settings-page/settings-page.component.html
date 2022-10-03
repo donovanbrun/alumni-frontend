@@ -1,0 +1,9 @@
+<app-navbar [isSettingsMode]="true" selectedPromotion="Paramètres" (onDisplaySideNav)="this.handleSideNavOpen()"></app-navbar>
+<mat-sidenav-container class="sidenav-container" (backdropClick)="this.handleSideNavOpen()">
+  <mat-sidenav class="sidenav" mode="over" (keydown.esc)="this.handleSideNavOpen()" [opened]="this.isSideNavOpened">
+    <app-sidenav [isSettingsMode]="true" [promotions]="this.promotions"></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-settings-promotion (onDeletePromotion)="this.loadPromotions()"></app-settings-promotion>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,21 @@
+<div *ngIf="this.isGeneral()" class="statistic">
+    <div class="grid-statistic-general">
+        <app-map class="map-general"></app-map>
+        <app-line-chart-situation class="situation-general" [promotion]="this.promotion"></app-line-chart-situation>
+        <app-table-companies class="table-general" [promotion]="this.promotion"></app-table-companies>
+        <app-line-chart-gender class="gender-general"></app-line-chart-gender>
+    </div>
+</div>
+
+
+<div *ngIf="!this.isGeneral()" class="statistic">
+    <div class="grid-statistic">
+        <app-map class="map"></app-map>
+        <app-pie-chart-situation class="situation" [promotion]="this.selectedPromotion"></app-pie-chart-situation>
+        <app-table-companies class="table" [promotion]="this.selectedPromotion"></app-table-companies>
+        <app-pie-chart-gender class="gender"  [promotion]="this.selectedPromotion"></app-pie-chart-gender>
+    </div>
+</div>
+
+
+

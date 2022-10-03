@@ -1,0 +1,21 @@
+<app-navbar [isSettingsMode]="true" selectedPromotion="Paramètres" (onDisplaySideNav)="this.handleSideNavOpen()"></app-navbar>
+<mat-sidenav-container class="sidenav-container" (backdropClick)="this.handleSideNavOpen()">
+  <mat-sidenav class="sidenav" mode="over" (keydown.esc)="this.handleSideNavOpen()" [opened]="this.isSideNavOpened">
+    <app-sidenav [isSettingsMode]="true" [promotions]="this.promotions"></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div id="component-ajout-promo">
+      <div id="ajout-promo-head">
+        <h1 id="ajout-promo-title">Ajout d'une nouvelle promotion</h1>
+        <button mat-icon-button color="primary" (click)="openDialog()">
+          <mat-icon>info</mat-icon>
+        </button>
+      </div>
+
+      <button id="ajout-promo" type="button" mat-raised-button (click)="fileInput.click()">{{file?.name || "Choisissez un fichier CSV"}}</button>
+      <input hidden (change)="handleFileInput($event)" #fileInput type="file" id="file" name="ajout-promo" accept=".csv">
+
+      <button mat-raised-button color="primary" id="btn-ajouter" (click)="addPromo()">Ajouter</button>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,76 @@
+.settings-title-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+#settings-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 36px;
+}
+
+.settings-title {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2rem;
+  color: #827F7F;
+  text-align: center;
+}
+
+.settings-button {
+  width: 20%;
+}
+
+.settings-card {
+  width: 80%;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #827F7F;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-card-button {
+  height: 80%;
+  color: #827f7f;
+}
+
+.settings-card-text {
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#settings-card-container {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+#settings-table-container {
+  max-height: calc(100vh - 200px);
+  overflow: auto;
+  width: 100%;
+}
+
+#settings-table {
+  width: 100%;
+  height: 100%;
+}
+
+#settings-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
